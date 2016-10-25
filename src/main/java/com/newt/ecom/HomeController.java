@@ -221,6 +221,7 @@ public class HomeController {
 			productList.setProductName(shoppingCartList.getProductName());
 			productList.setProductStatus(Productstatus.SHIPPED);
 			productList.setShoppingcartId(shoppingCartList.getShoppingcartId());
+			System.out.println("shopping cart ID"+shoppingCartList.getShoppingcartId());
 			lists.add(productList);
 		}
 		productCheckout.setProductList(lists);
