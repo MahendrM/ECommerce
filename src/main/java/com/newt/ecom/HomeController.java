@@ -220,6 +220,7 @@ public class HomeController {
 			productList.setProductId(shoppingCartList.getProductId());
 			productList.setProductName(shoppingCartList.getProductName());
 			productList.setProductStatus(Productstatus.SHIPPED);
+			productList.setShoppingcartId(shoppingCartList.getShoppingcartId());
 			lists.add(productList);
 		}
 		productCheckout.setProductList(lists);
