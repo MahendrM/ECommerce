@@ -254,7 +254,7 @@ public class HomeController {
 	}
 	
 	private List<Product> getProductList(){
-		 final String restURI = "http://52.207.17.79:8765/products/";		
+		 final String restURI = "http://52.207.22.180:8765/products/";		
 		 RestTemplate restTemplate = new RestTemplate();
 		 List<Product> results = restTemplate.getForObject(restURI, List.class);
 		 if(results != null)
