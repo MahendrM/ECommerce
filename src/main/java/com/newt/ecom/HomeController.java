@@ -159,7 +159,7 @@ public class HomeController {
 		
 		logger.debug("=====>"+shoppingBean.getProductId()+shoppingBean.getProductName()+shoppingBean.getProductPrice()+shoppingBean.getProductDescription());
 		
-		final String restURI = "http://52.207.177.148:8766/shoppingcart/OrderService/create/"+
+		final String restURI = "http://52.207.22.180:8766/shoppingcart/OrderService/create/"+
 		shoppingBean.getCustomerId()+"/"+shoppingBean.getCustomerName()+"/"+shoppingBean.getProductId()+"/"+shoppingBean.getProductName()
 		+"/"+shoppingBean.getProductPrice()+"/"+shoppingBean.getProductDescription();	
 		
@@ -184,7 +184,7 @@ public class HomeController {
 		ModelAndView modelAndView=new ModelAndView("ProceedToPay");
 		logger.debug("=====>"+shoppingBean.getProductId()+shoppingBean.getProductName()+shoppingBean.getProductPrice()+shoppingBean.getProductDescription());
 		
-		final String restURI = "http://52.207.177.148:8766/shoppingcart/OrderService/get/productList/"+shoppingBean.getCustomerId();		
+		final String restURI = "http://52.207.22.180:8766/shoppingcart/OrderService/get/productList/"+shoppingBean.getCustomerId();		
 		RestTemplate restTemplate = new RestTemplate();
 		List<ShoppingCartItems> results = restTemplate.getForObject(restURI, List.class);
 		logger.debug("=====>"+results);
