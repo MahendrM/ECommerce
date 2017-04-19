@@ -67,7 +67,7 @@ public class HomeController {
 		logger.info("Customer Info ====>"+customer.toString());
 		
 		ModelAndView modelAndView=new ModelAndView("loginPage");
-		final String restURI = "http://52.207.17.79:8767/customer/add";		
+		final String restURI = "http://localhost:8767/customer/add";		
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
 		restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
@@ -107,7 +107,7 @@ public class HomeController {
     		
     	}else{
 
-	        final String restURI = "http://52.207.17.79:8767/customer/login/"+customer.getUsername();	
+	        final String restURI = "http://localhost:8767/customer/login/"+customer.getUsername();	
 	        RestTemplate restTemplate = new RestTemplate();
 	        Customer customerDetails = restTemplate.getForObject( restURI, Customer.class);
 	        if(customerDetails != null){
@@ -159,7 +159,7 @@ public class HomeController {
 		
 		logger.debug("=====>"+shoppingBean.getProductId()+shoppingBean.getProductName()+shoppingBean.getProductPrice()+shoppingBean.getProductDescription());
 		
-		final String restURI = "http://52.207.22.180:8766/shoppingcart/OrderService/create/"+
+		final String restURI = "http://localhost:8766/shoppingcart/OrderService/create/"+
 		shoppingBean.getCustomerId()+"/"+shoppingBean.getCustomerName()+"/"+shoppingBean.getProductId()+"/"+shoppingBean.getProductName()
 		+"/"+shoppingBean.getProductPrice()+"/"+shoppingBean.getProductDescription();	
 		
@@ -184,7 +184,7 @@ public class HomeController {
 		ModelAndView modelAndView=new ModelAndView("ProceedToPay");
 		logger.debug("=====>"+shoppingBean.getProductId()+shoppingBean.getProductName()+shoppingBean.getProductPrice()+shoppingBean.getProductDescription());
 		
-		final String restURI = "http://52.207.22.180:8766/shoppingcart/OrderService/get/productList/"+shoppingBean.getCustomerId();		
+		final String restURI = "http://localhost:8766/shoppingcart/OrderService/get/productList/"+shoppingBean.getCustomerId();		
 		RestTemplate restTemplate = new RestTemplate();
 		List<ShoppingCartItems> results = restTemplate.getForObject(restURI, List.class);
 		logger.debug("=====>"+results);
@@ -226,7 +226,7 @@ public class HomeController {
 		}
 		productCheckout.setProductList(lists);
 		logger.info("productCheckout==>"+productCheckout.toString());
-		final String restURI = "http://52.207.177.148:8764/checkout/addCheckoutDetails/";		
+		final String restURI = "http://localhost:8764/checkout/addCheckoutDetails/";		
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
 		restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
@@ -254,7 +254,7 @@ public class HomeController {
 	}
 	
 	private List<Product> getProductList(){
-		 final String restURI = "http://52.207.22.180:8765/products/";		
+		 final String restURI = "http://localhost:8765/products/";		
 		 RestTemplate restTemplate = new RestTemplate();
 		 List<Product> results = restTemplate.getForObject(restURI, List.class);
 		 if(results != null)
