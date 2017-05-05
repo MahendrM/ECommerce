@@ -83,7 +83,7 @@
 	     if(searchId != ""){
 	     $.ajax({
 	         type: "GET",
-	         url: "http://52.207.22.180:8765/products/search/id/"+searchId,
+	         url: "http://192.168.2.91:8765/products/search/id/"+searchId,
 	         dataType: "json",
 	         success: function (data) {
 	            var jsonData = JSON.stringify(data);  
@@ -104,7 +104,7 @@
 	  $("#tbDetails tbody").remove(); 
 	   $.ajax({
 	          type: "GET",
-	          url: "http://52.207.22.180:8765/products/",
+	          url: "http://192.168.2.91:8765/products/",
 	          dataType: "json",
 	          success: function (data) { 
 	           var i=0;
