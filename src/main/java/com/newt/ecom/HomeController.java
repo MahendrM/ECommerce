@@ -67,7 +67,7 @@ public class HomeController {
 		logger.info("Customer Info ====>"+customer.toString());
 		
 		ModelAndView modelAndView=new ModelAndView("loginPage");
-		final String restURI = "http://localhost:8767/customer/add";		
+		final String restURI = "http://192.168.2.91:8767/customer/add";		
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
 		restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
@@ -107,7 +107,7 @@ public class HomeController {
     		
     	}else{
 
-	        final String restURI = "http://localhost:8767/customer/login/"+customer.getUsername();	
+	        final String restURI = "http://192.168.2.91:8767/customer/login/"+customer.getUsername();	
 	        RestTemplate restTemplate = new RestTemplate();
 	        Customer customerDetails = restTemplate.getForObject( restURI, Customer.class);
 	        if(customerDetails != null){
