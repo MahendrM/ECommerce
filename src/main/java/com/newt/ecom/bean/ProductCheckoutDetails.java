@@ -5,6 +5,8 @@ import java.util.List;
 
 
 public class ProductCheckoutDetails {
+	
+	
 
  private Long customerId;
 
